@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Branch;
+use Carbon;
 
 class BranchController extends Controller
 {
@@ -15,6 +16,8 @@ class BranchController extends Controller
     public function index()
     {
         $branches = Branch::all();
+
+        
         return view('branch.create', compact('branches'));
     }
 

@@ -70,6 +70,49 @@
             </form>
           </div>
         </div>
+         <div class="col-xs-6">
+          <div class="box box-info">
+            <div class="box-header">
+              <h3 class="box-title">List Branches</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Tempat</th>
+                  <th>Nama PT</th>
+                  <th>Sejak</th>
+                  <th>Action</th>
+                  
+                </tr>
+                @foreach($branches as $branch)
+                <tr>
+                  <td>{{ $branch->id }}</td>
+                  <td>{{ $branch->name }}</td>
+                  <td>{{ $branch->ptname }}</td>
+                  <td>{{ date('Y', strtotime($branch->since)) }}</td>
+                  <td><a href="#" class="label label-success">Edit</a><a href="#" class="label label-danger">Delete</a></td>
+                </tr>
+                @endforeach
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+
+
     </div>
 
       <!-- /.row -->

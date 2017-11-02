@@ -96,13 +96,22 @@
                   <th>Action</th>
                   
                 </tr>
+                @php
+                  $no=1;
+                @endphp
                 @foreach($branches as $branch)
                 <tr>
-                  <td>{{ $branch->id }}</td>
+                  <td>{{ $no++ }}</td>
                   <td>{{ $branch->name }}</td>
                   <td>{{ $branch->ptname }}</td>
                   <td>{{ date('Y', strtotime($branch->since)) }}</td>
-                  <td><a href="#" class="label label-success">Edit</a><a href="#" class="label label-danger">Delete</a></td>
+                  <td><a href="{{ route('branch.edit', $branch) }}" class="label label-success">Edit</a>
+                    <form action="{{ route('branch.destroy', $branch) }}" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                      </td>
                 </tr>
                 @endforeach
               </table>

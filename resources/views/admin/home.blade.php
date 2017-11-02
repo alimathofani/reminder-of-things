@@ -30,7 +30,7 @@
               <div class="icon">
                 <i class="ion ion-ribbon-a"></i>
               </div>
-               <a href="{{ url($branch->slug) }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+               <a href="{{ url('admin/'.$branch->slug) }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
         @endforeach

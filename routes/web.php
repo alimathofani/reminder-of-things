@@ -35,4 +35,9 @@ Route::get('/admin', 'DashboardController@index')->name('admin.index');
 Route::get('/admin/branch', 'BranchController@index')->name('branch.index');
 Route::get('/admin/branch/create', 'BranchController@create')->name('branch.create');
 Route::post('/admin/branch/create', 'BranchController@store')->name('branch.store');
+Route::get('/admin/branch/{branch}/edit', 'BranchController@edit')->name('branch.edit');
+Route::patch('/admin/branch/{branch}/edit', 'BranchController@update')->name('branch.update');
+Route::delete('/admin/branch/{branch}/delete', 'BranchController@destroy')->name('branch.destroy');
+
+Route::get('/admin/{slug}', 'BranchController@getSingle')->where('slug', '[\w\d\-\_]+')->name('branch.single');
 

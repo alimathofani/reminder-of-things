@@ -7,6 +7,7 @@
 	<div class="col-md-8 col-md-offset-2">
 		<h1>{{ $branch->name }}</h1>
 		<p>{{ $branch->ptname }}</p>
+		
 	</div>
 </div>
 

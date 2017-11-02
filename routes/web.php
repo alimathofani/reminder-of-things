@@ -39,5 +39,10 @@ Route::get('/admin/branch/{branch}/edit', 'BranchController@edit')->name('branch
 Route::patch('/admin/branch/{branch}/edit', 'BranchController@update')->name('branch.update');
 Route::delete('/admin/branch/{branch}/delete', 'BranchController@destroy')->name('branch.destroy');
 
+Route::get('/admin/employee', 'EmployeeController@index')->name('employee.index');
+
 Route::get('/admin/{slug}', 'BranchController@getSingle')->where('slug', '[\w\d\-\_]+')->name('branch.single');
+
+
+
 
